@@ -1,14 +1,8 @@
-//-------------------------------------------------
-
-
 function getTotalBooksCount(books) {
   return books.length
 }
 
 
-
-
-//-------------------------------------------------
 
 
 function getTotalAccountsCount(accounts) {
@@ -19,21 +13,12 @@ function getTotalAccountsCount(accounts) {
 
 
 
-//-------------------------------------------------
-
-
-
-
 
 const bookFunctions = require('./books.js');
 
 function getBooksBorrowedCount(books) {
   return bookFunctions.partitionBooksByBorrowedStatus(books)[0].length
 }
-
-
-//-------------------------------------------------
-
 
 
 
@@ -56,54 +41,6 @@ return popularGenres.slice(0,5)
 
 
 
-
-  
-
-/*const genreCount = books.reduce((genres, book)=> {
-  //if book.genre in genres => genres[book.genre] + 1
-  //else genres[book.genre] =1
-  //return genres
-  ), {}
-
-=>{"Travel":3, "Young Adult": 6}
-
-*/
-//const popularGenres = Object.keys(genreCount).map((key)=> ({name: key, count: genreCount[key]}))
-//popularGenres.sort((bookA, bookB) => descendingSort)
-//return popularGenres => slice =>5
-
-
-
-
-
-/*
-  let countObj = {};
-  books.forEach(aBook => {
-    if (countObj[aBook.genre] != null) {
-      countObj[aBook.genre]++;
-    } else {
-      countObj[aBook.genre] = 1;
-    }
-  });
-  let countArray = [];
-  for (const [key, value] of Object.entries(countObj)) {
-    countArray.push({
-      'name' : key,
-      'count' : value
-    }); 
-  }
-  countArray.sort((a,b) => b.count - a.count);
-  return countArray.slice(0, 5);
-  })
-  */
-
-
-
-
-//-------------------------------------------------
-
-
-
 function getMostPopularBooks(books) {
   const mapBooksToNameAndCount = books.map((book)=> ({name: book.title, count: book.borrows.length}))
   mapBooksToNameAndCount.sort((bookA, bookB)=> bookB.count - bookA.count)
@@ -112,7 +49,7 @@ function getMostPopularBooks(books) {
 
 
 
-//-------------------------------------------------
+
 function _sortObjectByValues(obj){
   const keys = Object.keys(obj)
   
@@ -151,11 +88,6 @@ function getMostPopularAuthors(books, authors) {
   }).slice(0,5)
 return arr
 }
-
-
-
-
-//-------------------------------------------------
 
 
 
